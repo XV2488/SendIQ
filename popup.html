@@ -1,0 +1,140 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>SendIQ</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="popup-root">
+      <header class="popup-header">
+        <div class="header-content">
+          <div class="logo-section">
+            <div class="logo-icon">✉️</div>
+            <div class="logo-text">
+              <h1 class="app-title">SendIQ</h1>
+              <p class="app-subtitle">Professional Free Mail Merge and More for Gmail</p>
+            </div>
+          </div>
+          <div id="info">
+            <div class="current-time" id="currentTime"></div>
+            <div class="account-info" id="account"></div>
+          </div>
+        </div>
+      </header>
+
+      <main class="popup-main">
+        <section class="action-section">
+          <div class="action-buttons">
+            <button id="openGmailBtn" class="btn btn-primary btn-large">
+              <span class="btn-icon">📧</span>
+              <span class="btn-text">Open Gmail</span>
+            </button>
+          </div>
+          
+          <div class="scheduled-info">
+            <div class="scheduled-stats">
+              <div class="stat-item">
+                <span class="stat-icon">📊</span>
+                <span class="stat-text">
+                  <span class="stat-number" id="scheduledCount">0</span>
+                  <span class="stat-label">emails scheduled</span>
+                </span>
+              </div>
+              <div class="stat-item" id="nextScheduledTime" style="display: none;">
+                <span class="stat-icon">⏱️</span>
+                <span class="stat-text" id="nextScheduledText"></span>
+              </div>
+              <div class="stat-item" id="scheduledSummary" style="display: none;">
+                <span class="stat-icon">📋</span>
+                <span class="stat-text" id="scheduledSummaryText"></span>
+              </div>
+            </div>
+            
+            <div class="scheduled-actions">
+              <button id="refreshScheduledBtn" class="btn btn-secondary btn-small" title="Refresh scheduled emails">
+                <span class="btn-icon">↻</span>
+                <span class="btn-text">Refresh</span>
+              </button>
+              <button id="clearAllScheduledBtn" class="btn btn-danger btn-small" title="Clear all scheduled emails" style="display: none;">
+                <span class="btn-icon">🗑</span>
+                <span class="btn-text">Clear All</span>
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <section class="settings-section">
+          <h2 class="section-title">Settings</h2>
+          <div class="settings-grid">
+            <div class="setting-item">
+              <div class="setting-control">
+                <input type="checkbox" id="autoIntercept" class="setting-checkbox" checked>
+                <label for="autoIntercept" class="setting-label">
+                  <div class="setting-title">Auto-Intercept Send Button</div>
+                  <div class="setting-description">Automatically detect multiple recipients and send individual emails</div>
+                </label>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="features-section">
+          <h2 class="section-title">Features</h2>
+          <div class="features-grid">
+            <div class="feature-item">
+              <div class="feature-icon">💡</div>
+              <div class="feature-content">
+                <div class="feature-title">Smart Personalization</div>
+                <div class="feature-description">Use {{name}} in your emails for personalized messages</div>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">🚀</div>
+              <div class="feature-content">
+                <div class="feature-title">Automatic Detection</div>
+                <div class="feature-description">Works seamlessly with Gmail's native interface</div>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">📧</div>
+              <div class="feature-content">
+                <div class="feature-title">Individual Emails</div>
+                <div class="feature-description">Each recipient gets their own email (no BCC)</div>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">⚡</div>
+              <div class="feature-content">
+                <div class="feature-title">Instant Setup</div>
+                <div class="feature-description">No configuration needed - works automatically</div>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">⏰</div>
+              <div class="feature-content">
+                <div class="feature-title">Schedule Send</div>
+                <div class="feature-description">Clock icon in Gmail composer to schedule emails for later</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+        <section class="status-message">
+          <div id="status" class="status"></div>
+        </section>
+      </main>
+
+      <footer class="popup-footer">
+        <div class="footer-content">
+          <div class="footer-text">Respect Gmail sending limits & anti-spam rules</div>
+          <div class="footer-version">v1.0.0</div>
+        </div>
+      </footer>
+    </div>
+
+    <script src="popup.js"></script>
+  </body>
+</html>

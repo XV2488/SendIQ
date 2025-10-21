@@ -1,0 +1,47 @@
+{
+  "manifest_version": 3,
+  "name": "SendIQ",
+  "version": "1.4.0",
+  "description": "Send the same email to many recipients quickly — each recipient gets an individual message (no BCC) for free.",
+  "icons": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "SendIQ"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": [
+    "storage",
+    "identity"
+  ],
+  "host_permissions": [
+    "https://www.googleapis.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://mail.google.com/*"
+      ],
+      "js": ["content.js"],
+      "css": ["content.css"],
+      "run_at": "document_idle",
+      "all_frames": true
+    }
+  ],
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEArSjqZ5ZIh5K/TrZKlBRZKL51xwjAtaoXBMT5q/GsDiYqlyexJlS6V5LlEOoTV2I+lItjxxWSMw/dGA+H9HNFDX0eXPLRpoevoX15x2PGZ6QqgohWLpr1m0R8nV2QBTb2EqW3y0M2+HTlu5/cqsouOYois4KwBpcAzhxSVkDEHTcweRv/KbPzhxVM3Ol2viemchEG6ee8YWbqWQfcKWXJexM5VnCyI3ytlE1mAWIqBTKsc1TkT7mblxCh23oOdgpk3Q4ya/9P3XqEa8N8l4jsF48zUbBtQ6+aTTmSSv6FXC1q6wziPfYAVQlKQrc1vCrVT2CIftgsLqP0so0gPvZjnwIDAQAB",
+  "oauth2": {
+    "client_id": "287751131452-u6j9labqsaiqmihdja0dg7f8l9ckh4n4.apps.googleusercontent.com",
+    "scopes": [
+      "https://www.googleapis.com/auth/gmail.send",
+      "https://www.googleapis.com/auth/gmail.modify",
+      "openid",
+      "email",
+      "profile"
+    ]
+  }
+}
